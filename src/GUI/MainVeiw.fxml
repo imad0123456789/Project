@@ -14,9 +14,9 @@
         <TableView fx:id="SongsTabel" layoutX="443.0" layoutY="120.0" prefHeight="384.0" prefWidth="329.0">
             <columns>
                 <TableColumn fx:id="Title" prefWidth="92.0" text="Title" />
-                <TableColumn prefWidth="97.0" text="Artist" />
-                <TableColumn prefWidth="79.0" text="Category" />
-                <TableColumn prefWidth="60.0" text="Time" />
+                <TableColumn fx:id="Artist" prefWidth="97.0" text="Artist" />
+                <TableColumn fx:id="Category" prefWidth="79.0" text="Category" />
+                <TableColumn fx:id="Time" prefWidth="60.0" text="Time" />
             </columns>
         </TableView>
         <Label layoutX="449.0" layoutY="97.0" text="Songs">
@@ -49,16 +49,19 @@
       <TextField layoutX="595.0" layoutY="34.0" />
       <Button layoutX="745.0" layoutY="32.0" minWidth="35.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" text="O/" />
       <Label layoutX="555.0" layoutY="39.0" text="Filter" />
-      <Button fx:id="playSong" layoutX="121.0" layoutY="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" text="l&gt;" />
-      <Button fx:id="backSong" layoutX="58.0" layoutY="35.0" mnemonicParsing="false" text="&lt;&lt;" />
-      <Button fx:id="nextSong" layoutX="188.0" layoutY="34.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="&gt;&gt;">
+      <Button fx:id="playSong" layoutX="111.0" layoutY="13.0" minWidth="35.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" style="-fx-background-radius: 100;" text="▶">
+         <font>
+            <Font size="24.0" />
+         </font></Button>
+      <Button fx:id="backSong" layoutX="61.0" layoutY="26.0" mnemonicParsing="false" style="-fx-background-radius: 100;" text="⏮" />
+      <Button fx:id="nextSong" layoutX="188.0" layoutY="22.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" text="⏭">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Button layoutX="259.0" layoutY="518.0" minWidth="46.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="46.0" rotate="-90.0" text="--&gt;" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="495.0" AnchorPane.topAnchor="518.0" />
+      <Button layoutX="255.0" layoutY="516.0" minWidth="46.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="46.0" text="⬆" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="255.0" AnchorPane.rightAnchor="499.0" AnchorPane.topAnchor="516.0" />
       <Button layoutX="358.0" layoutY="518.0" mnemonicParsing="false" text="Delete" />
-      <Button layoutX="304.0" layoutY="518.0" minWidth="46.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="46.0" rotate="90.0" text="--&gt;" />
+      <Button layoutX="307.0" layoutY="517.0" minWidth="46.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="46.0" text="⬇" />
       <Button layoutX="466.0" layoutY="521.0" mnemonicParsing="false" text="New..." />
       <Button layoutX="543.0" layoutY="521.0" mnemonicParsing="false" text="Edit..." />
       <Button layoutX="608.0" layoutY="521.0" mnemonicParsing="false" text="Delete" />

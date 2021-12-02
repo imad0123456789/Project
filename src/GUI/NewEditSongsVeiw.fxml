@@ -7,18 +7,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.NewEditSongsVeiw">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.NewEditSongsVeiw.">
    <children>
-      <TextField layoutX="165.0" layoutY="57.0" prefHeight="26.0" prefWidth="294.0" />
-      <TextField layoutX="165.0" layoutY="109.0" prefHeight="26.0" prefWidth="294.0" />
-      <TextField layoutX="165.0" layoutY="200.0" prefHeight="26.0" prefWidth="147.0" />
-      <TextField layoutX="165.0" layoutY="246.0" prefHeight="26.0" prefWidth="294.0" />
-      <ComboBox layoutX="165.0" layoutY="157.0" prefWidth="150.0" />
-      <Button layoutX="329.0" layoutY="157.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="More..." />
-      <Button layoutX="468.0" layoutY="247.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="Choose.." />
-      <Button layoutX="473.0" layoutY="313.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="51.0" text="Save" />
-      <Button layoutX="398.0" layoutY="313.0" mnemonicParsing="false" text="Cancel" />
+      <TextField fx:id="txt_title" layoutX="165.0" layoutY="57.0" prefHeight="26.0" prefWidth="294.0" promptText="name of the song" />
+      <TextField fx:id="txt_artist" layoutX="165.0" layoutY="109.0" prefHeight="26.0" prefWidth="294.0" promptText="name of the Artist" />
+      <TextField fx:id="txt_time" layoutX="165.0" layoutY="200.0" prefHeight="26.0" prefWidth="147.0" promptText="time" />
+      <TextField fx:id="txt_file_url" layoutX="165.0" layoutY="246.0" prefHeight="26.0" prefWidth="294.0" promptText="name of the song" />
+      <ComboBox fx:id="txt_category" layoutX="165.0" layoutY="157.0" prefWidth="150.0" />
+      <Button fx:id="ClickMore" layoutX="329.0" layoutY="157.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="More..." />
+      <Button fx:id="ClikeChoose" layoutX="468.0" layoutY="247.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="Choose.." />
+      <Button fx:id="ClickSave" layoutX="473.0" layoutY="313.0" mnemonicParsing="false" onAction="#addSongs" prefHeight="26.0" prefWidth="51.0" text="Save" />
+      <Button fx:id="ClikeCancel" layoutX="398.0" layoutY="313.0" mnemonicParsing="false" text="Cancel" />
       <Label alignment="CENTER_RIGHT" layoutX="109.0" layoutY="62.0" prefHeight="18.0" prefWidth="41.0" text="Title:">
          <font>
             <Font name="System Bold" size="12.0" />
