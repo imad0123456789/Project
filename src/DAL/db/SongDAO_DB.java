@@ -1,34 +1,41 @@
 package DAL.db;
 
 import BE.Songs;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
+
+import javax.swing.table.AbstractTableModel;
+
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SongDAO_DB {
 
-    private static MyDatabaseConnector databaseConnector;
+public class SongDAO_DB {
+   private static MyDatabaseConnector databaseConnector;
+
 
     public SongDAO_DB() {
         databaseConnector = new MyDatabaseConnector();
     }
 
-    public static List<Songs> getAllSongs() throws SQLException {
+// for insert method
+    private Connection con;
+    private String Sqlinsert = "INSERT INTO Songs ( Title, Artist, Category, Timeof, fileurl) VALUES (?, ?, ?, ?, ?)";
+    private String Title;
+    private String Artist;
+    private String Category;
+    private String Timeof;
+    private String fileurl;
 
+
+
+    public static List<Songs> getAll() throws SQLException {
         ArrayList<Songs> allSongs = new ArrayList<>();
-
-
-        try (Connection connection = databaseConnector.getConnection()) {
-            Statement statement = connection.createStatement();
-
-            String sql = "SELECT * FROM Songs;";
-
-            System.out.printf("Songs Table of MyTunes DataBase: %n%n");
-
-
+        try (Connection con = databaseConnector.getConnection()) {
+            Statement statement = con.createStatement();
+            String sql = "SELECT * FROM Songs";
 
             if (statement.execute(sql)) {
                 ResultSet resultSet = statement.getResultSet();
@@ -49,44 +56,36 @@ public class SongDAO_DB {
         return allSongs;
     }
 
-    public static void main(String[] args) throws SQLException {
-        SongDAO_DB songDAO_db = new SongDAO_DB();
-        List<Songs> allSongs = songDAO_db.getAllSongs();
-        System.out.println(allSongs);
-    }
+
+    public void addSongs(Songs songs) {
+        try (Connection con = databaseConnector.getConnection()) {
+            String sql = "INSERT INTO Songs ( Title, Artist, Category, Timeof, fileurl) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, songs.getTitle());
+            pstmt.setString(2, songs.getArtist());
+            pstmt.setString(3, songs.getCategory());
+            pstmt.setString(4, songs.getTime());
+            pstmt.setString(5, songs.getFileurl());
 
 
+            pstmt.executeUpdate();
 
-
-    /*
-
-    public static ObservableList<Songs> getDataSongs() throws SQLException {
-        final MyDatabaseConnector databaseConnector;
-        databaseConnector = new MyDatabaseConnector();
-        Connection connection = databaseConnector.getConnection();
-        ObservableList<Songs> list = FXCollections.observableArrayList();
-        try {
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM Songs");
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                {
-                    int id = rs.getInt("id");
-                    String Title = rs.getString("Title");
-                    String Artist = rs.getString("Artist");
-                    String Category = rs.getString("Category");
-                    String Time = rs.getString("Timeof");
-                    String FileURL = rs.getString("fileurl");
-                }
-            }
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return list;
-
     }
-*/
 
+    public static void main(String[] args) throws SQLException {
+        SongDAO_DB songDAO_db = new SongDAO_DB();
+        List<Songs> allSongs = songDAO_db.getAll();
+        System.out.println(allSongs);
+    }
 
 }
+
+
+
+
 

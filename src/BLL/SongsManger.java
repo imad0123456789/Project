@@ -1,6 +1,6 @@
 package BLL;
 
-public class SongsEdits {
+public class SongsManger {
 
     private static final String FILE_NAME = "SongsTabel";
     //private final DepartmentPersistanceManager dpm;
