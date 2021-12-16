@@ -19,6 +19,14 @@ public class Songs {
         this.fileurl = fileurl;
     }
 
+    public Songs(String title, String artist, String category, String time, String fileurl) {
+        Title = title;
+        this.artist = artist;
+        this.category = category;
+        Time = time;
+        this.fileurl = fileurl;
+    }
+
     public int getId() {
         return id;
     }
