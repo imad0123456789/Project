@@ -58,8 +58,7 @@ public class MainController implements Initializable {
     private TableColumn<Songs, String> col_Time;
     @FXML
     private Button CloseBotton;
-    @FXML
-    private Button LoadBut;
+
     @FXML
     private Button NewBot;
     @FXML
@@ -68,8 +67,7 @@ public class MainController implements Initializable {
     private Slider volumeSlider;
     @FXML
     private Label SongPlayLabel;
-    @FXML
-    private Button LoadPBut;
+
     @FXML
     private TableView<Playlist> PlaylistTabelView;
     @FXML
@@ -83,7 +81,8 @@ public class MainController implements Initializable {
     private Button playSong;
     @FXML
     private Label currentSong;
-
+    @FXML
+    private TextField Txt_search;
 
     @FXML
     private TableView<Songs> songsInPlaylist;
@@ -393,6 +392,22 @@ public class MainController implements Initializable {
             //fxmlLoader.<NewPlaylistController>getController().setController(this); //Sets controler by default for both creating and editing playlists
         }
     }
+
+    @FXML
+    void SearchBtn(ActionEvent event) throws SQLException {
+        if (Txt_search.getText() == null  || Txt_search.getText().length() <= 0 ){
+            SongsTabelView.setItems(songModel.getSongs());
+        }
+        else {
+            ObservableList<Songs> foundSong = songModel.search(songModel.getSongs(), Txt_search.getText());
+            if ( foundSong != null){
+                SongsTabelView.setItems(foundSong);
+
+            }
+        }
+
+    }
+
 
 }
 

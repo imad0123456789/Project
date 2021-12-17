@@ -45,8 +45,8 @@
         <Button fx:id="NewListBt" layoutX="25.0" layoutY="521.0" mnemonicParsing="false" onAction="#clickNewlist" text="New" />
         <Button layoutX="74.0" layoutY="521.0" mnemonicParsing="false" onAction="#editPlaylist" text="Edit..." />
         <Button layoutX="178.0" layoutY="521.0" mnemonicParsing="false" onAction="#deletePlaylist" text="Delete" />
-      <TextField layoutX="595.0" layoutY="34.0" />
-      <Button layoutX="745.0" layoutY="32.0" minWidth="35.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" text="🔎" />
+      <TextField fx:id="Txt_search" layoutX="595.0" layoutY="34.0" />
+      <Button layoutX="745.0" layoutY="32.0" minWidth="35.0" mnemonicParsing="false" onAction="#SearchBtn" prefHeight="30.0" prefWidth="35.0" text="🔎" />
       <Label layoutX="555.0" layoutY="39.0" text="Filter" />
       <Button fx:id="playSong" layoutX="111.0" layoutY="13.0" minWidth="35.0" mnemonicParsing="false" onAction="#audioPlayerButtons" prefHeight="51.0" prefWidth="50.0" style="-fx-background-radius: 100;" text="▶">
          <font>
@@ -73,8 +73,8 @@
       </Label>
       <TableView fx:id="songsInPlaylist" layoutX="245.0" layoutY="120.0" prefHeight="384.0" prefWidth="162.0">
         <columns>
-          <TableColumn fx:id="songInPlaylistID" prefWidth="48.79998779296875" text="ID" />
-          <TableColumn fx:id="songsInPlaylistName" prefWidth="112.800048828125" text="Songs Name" />
+          <TableColumn fx:id="songInPlaylistID" minWidth="0.0" prefWidth="0.0" text="ID" />
+          <TableColumn fx:id="songsInPlaylistName" prefWidth="162.0" text="Songs Name" />
         </columns>
       </TableView>
       <Label fx:id="currentSong" layoutX="291.0" layoutY="40.0" prefHeight="25.0" prefWidth="188.0">
