@@ -14,8 +14,8 @@
       <TextField fx:id="txt_time" layoutX="165.0" layoutY="200.0" prefHeight="26.0" prefWidth="147.0" promptText="time" />
       <TextField fx:id="txt_file_url" layoutX="165.0" layoutY="246.0" prefHeight="26.0" prefWidth="294.0" promptText="name of the song" />
       <ComboBox fx:id="txt_category" layoutX="165.0" layoutY="157.0" prefWidth="150.0" />
-      <Button fx:id="ClickMore" layoutX="329.0" layoutY="157.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="More..." />
-      <Button fx:id="ClikeChoose" layoutX="468.0" layoutY="247.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="Choose.." />
+      <Button fx:id="ClickMore" layoutX="329.0" layoutY="157.0" mnemonicParsing="false" onAction="#createCategory" prefHeight="26.0" prefWidth="62.0" text="More..." />
+      <Button fx:id="ClikeChoose" layoutX="468.0" layoutY="247.0" mnemonicParsing="false" onAction="#ChooseLocation" prefHeight="26.0" prefWidth="74.0" text="Select File" />
       <Button fx:id="ClickSave" layoutX="473.0" layoutY="313.0" mnemonicParsing="false" onAction="#addSongs" prefHeight="26.0" prefWidth="51.0" text="Save" />
       <Button fx:id="CloseBotton" layoutX="398.0" layoutY="313.0" mnemonicParsing="false" onAction="#clickClose" text="Cancel" />
       <Label alignment="CENTER_RIGHT" layoutX="109.0" layoutY="62.0" prefHeight="18.0" prefWidth="41.0" text="Title:">

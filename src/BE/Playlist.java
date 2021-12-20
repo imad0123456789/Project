@@ -18,7 +18,6 @@ public class Playlist {
         this.id = id;
         this.name = name;
         this.songCount = songCount;
-        this.totalTime = totalTime;
        this.totalTime = totalTime;
     }
     public Playlist(int id, String name ) {

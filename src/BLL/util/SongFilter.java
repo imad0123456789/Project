@@ -5,7 +5,6 @@ import BE.Songs;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.Locale;
 
 public class SongFilter {
 

@@ -54,7 +54,6 @@ public class Manager implements LogicInterface {
     @Override
     public void deletePlaylist(Playlist play) {
 
-        //playlistSongInfo.deleteFromPlaylistSongsEverything(play);
         playListDAO.deletePlaylist(play);
     }
 
